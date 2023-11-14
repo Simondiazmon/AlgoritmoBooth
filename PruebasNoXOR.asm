@@ -176,11 +176,11 @@ SHIFTA:;HACER DESPLAZAMiENTO SIN SUMAR 128 (1000 0000)
     MOV [DPTR], ACC ; Almacena el valor desplazado de VAR_A en la dirección de VAR_A
     JMP Inc_it  ; Salta a la dirección especificada en CTE
 Inc_it: 
-	MOV ACC, Count 	    ;CTE - direccion de Count
-	MOV DPTR, ACC	    ;Mueve la dirección de Count a DPTR
-	MOV ACC, [DPTR]	    ;Carga el valor de VAR_A en ACC
-	MOV A, ACC		    ;Carga el valor de VAR_A en el registro A
-	MOV ACC, 0b11111111	;CTE = -1
+    MOV ACC, Count 	    ;CTE - direccion de Count
+    MOV DPTR, ACC	    ;Mueve la dirección de Count a DPTR
+    MOV ACC, [DPTR]	    ;Carga el valor de VAR_A en ACC
+    MOV A, ACC		    ;Carga el valor de VAR_A en el registro A
+    MOV ACC, 0b11111111	;CTE = -1
     ADD ACC, A		    ;Count - 1 
     MOV [DPTR], ACC     ;Se almacena el valor de COUNT
     JZ END_LOOP;Si da 0 termina el ciclo
